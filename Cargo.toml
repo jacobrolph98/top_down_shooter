@@ -1,0 +1,23 @@
+[package]
+name = "top_down_shooter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.14"
+#UI
+bevy_lunex = "0.2.3"
+#Physics
+avian2d = "0.1"
+# Persistence
+bevy-persistent = { version = "0.6.0", features = ["bincode", "toml"] }
+serde = { version = "1.0", features = ["derive"]}
+dirs = "5.0"
+
+# Enable a small amount of optimization in the dev profile.
+[profile.dev]
+opt-level = 1
+
+# Enable a large amount of optimization in the dev profile for dependencies.
+[profile.dev.package."*"]
+opt-level = 3
